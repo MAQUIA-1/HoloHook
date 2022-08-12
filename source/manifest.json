@@ -1,0 +1,31 @@
+{
+  "name": "Holo Hook",
+  "description": "Tools to copy YouTube Live Chat to Clipboard",
+  "version": "1.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "permissions": ["storage", "tabs", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "ico.png",
+      "32": "ico.png",
+      "48": "ico.png",
+      "128": "ico.png"
+    }
+  },
+  "icons": {
+    "16": "ico.png",
+    "32": "ico.png",
+    "48": "ico.png",
+    "128": "ico.png"
+  }
+}
