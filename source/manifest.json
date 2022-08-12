@@ -16,16 +16,16 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "ico.png",
-      "32": "ico.png",
-      "48": "ico.png",
-      "128": "ico.png"
+      "16": "/img/ico.png",
+      "32": "/img/ico.png",
+      "48": "/img/ico.png",
+      "128": "/img/ico.png"
     }
   },
   "icons": {
-    "16": "ico.png",
-    "32": "ico.png",
-    "48": "ico.png",
-    "128": "ico.png"
+    "16": "/img/ico.png",
+    "32": "/img/ico.png",
+    "48": "/img/ico.png",
+    "128": "/img/ico.png"
   }
 }
