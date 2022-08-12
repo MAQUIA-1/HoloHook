@@ -50,7 +50,7 @@ chrome.runtime.onConnect.addListener((port) => {
           //background 슬립시 토글값 날아감 방지
           chrome.storage.sync.get("toggle", function (res) {
             toggleState = res.toggle;
-            console.log(`toggle 방지안:${toggleState}`);
+            console.log(`toggle:${toggleState}`);
             sendMessage("toggleWakeUp", toggleState);
           });
 

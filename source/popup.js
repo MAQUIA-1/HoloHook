@@ -4,6 +4,7 @@ const output1 = document.getElementById("refreshRangeOut");
 const slider2 = document.getElementById("chatRange");
 const output2 = document.getElementById("chatRangeOut");
 const saveButton = document.getElementById("save");
+const settingcontainer = document.getElementById("settingcontainer");
 
 //전체 메세지 수신
 chrome.runtime.onConnect.addListener((port) => {
@@ -12,10 +13,12 @@ chrome.runtime.onConnect.addListener((port) => {
       port.onMessage.addListener((message) => {
         if (message == "true") {
           toggleBtn.checked = true;
+          settingDisplayOff();
         } else if (message == "false") {
           toggleBtn.checked = false;
+          settingDisplayOn();
         }
-        console.log(`toggle 팝업:${message}`);
+        console.log(`toggle popup:${message}`);
       });
       break;
     //------------------------------------------------
@@ -39,8 +42,10 @@ toggleBtn.addEventListener("change", async (event) => {
   const port = await chrome.runtime.connect({ name: "toggleChange" });
   if (event.target.checked) {
     port.postMessage("Checked!");
+    settingDisplayOff();
   } else {
     port.postMessage("Unchecked!");
+    settingDisplayOn();
   }
 });
 
@@ -69,4 +74,12 @@ slider2.oninput = function () {
 async function sendMessage(nameVal, Message) {
   const port = await chrome.runtime.connect({ name: nameVal });
   port.postMessage(Message);
+}
+
+function settingDisplayOff() {
+  settingcontainer.style.display = "none"; // hide
+}
+
+function settingDisplayOn() {
+  settingcontainer.style.display = ""; // show
 }
