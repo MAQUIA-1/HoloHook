@@ -20,7 +20,7 @@ chrome.runtime.onConnect.addListener((port) => {
     //----------------------------------------------
     case "toggleOnSlide2":
       port.onMessage.addListener((message) => {
-        slideVal2 = JSON.parse(message) * -1 - 1;
+        slideVal2 = JSON.parse(message) * -1;
       });
   }
   return true;
@@ -54,7 +54,7 @@ function getChat(slideVal2) {
     });
 
     let chatArrSort = [];
-    chatArrSort = chatArr.slice(Number(slideVal2), -1);
+    chatArrSort = chatArr.slice(Number(slideVal2));
 
     let chatText = chatArrSort.join("\n");
     //=====================================================
