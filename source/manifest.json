@@ -1,6 +1,6 @@
 {
   "name": "Holo Hook",
-  "description": "Tools to copy YouTube Live Chat to Clipboard",
+  "description": "Chrome extension for copying YouTube live chat to clipboard",
   "version": "1.1",
   "manifest_version": 3,
   "background": {
